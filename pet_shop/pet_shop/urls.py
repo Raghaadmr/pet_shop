@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
+from pets import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('petshop/',views.list,name='pet-list'),
     path('petshop/create',views.create,name='pet-create'),
-    path('petshop/<int:pet_id>/update',view.update,name='pet-update'),
-    path('petshop/<int:pet_id>/detail',view.detail,name='pet-detail'),
+    path('petshop/<int:pet_id>/update',views.update,name='pet-update'),
+    path('petshop/<int:pet_id>/detail',views.detail,name='pet-detail'),
 ]
 if settings.DEBUG:
     '''Uncomment the next line to include your static files'''

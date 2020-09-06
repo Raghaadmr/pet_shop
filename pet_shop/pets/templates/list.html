@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Pets List{% endblock title %}
+{% block content %}
+
+<div class="row">
+	{% for pet in pets %}
+	<div class="col-md-4">
+				<div class="card my-card">
+					<div class="card-body">
+						{% if pet.img %}
+						<img src="{{pet.image.url}}" alt="picture">
+						{% endif %}
+						<a href="{{pet.get_absolute_url}}">
+						<h5 class="card-title">{{pet.name}}</h5>
+						<p class="card-text">{{pet.age}}</p>
+            <p class="card-text">{{pet.price}}</p>
+						<small>{{pet.available}}</small>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item text-center">
+								<a href="{% url 'detail' pet.id %}" class="btn btn-outline-dark">View Detail</a>
+						</li>
+					</ul>
+				</div>
+		</div>
+	{% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Detail{% endblock title %}
+{% block content %}
+<div class="card">
+	{% if pet.img %}
+	<img src="{{pet.img.url}}" alt="picture">
+	{% endif %}
+	<h5 class="card-header">Pet Details</h5>
+	<div class="card-body">
+		<h5 class="card-title">{{pet.name}}</h5>
+		<p class="card-text">{{pet.age}}</p>
+		<p class="card-text">{{pet.price}}</p>
+    <small>{{pet.available}}</small>
+		<div class="row text-center">
+				<div class="col-md-6">
+						<a href="{% url 'update' pet.id %}" class="btn btn-outline-primary btn-block">Update</a>
+				</div>
+				<div class="col-md-6">
+						<a href="{% url 'delete' pet.id %}" class="btn btn-outline-danger btn-block">Delete</a>
+				</div>
+		</div>
+	</div>
+</div>
+		<hr>
+		{% endblock content %}
+
+
+
+
+
+		<div class="card">
+		  <h5 class="card-header">Restaurant Details</h5>
+		  <div class="card-body">
+		    <h5 class="card-title">{{car.make}}</h5>
+		    <p class="card-text">{{car.model}}</p>
+		    <p class="card-text">{{car.year}}</p>
+		    <div class="row text-center">
+		        <div class="col-md-6">
+		            <a href="{% url 'car-update' car.id %}" class="btn btn-outline-primary btn-block">Update</a>
+		        </div>
+		        <div class="col-md-6">
+		            <a href="{% url 'car-delete' car.id %}" class="btn btn-outline-danger btn-block">Delete</a>
+		        </div>
+		    </div>
+		  </div>
+		</div>
