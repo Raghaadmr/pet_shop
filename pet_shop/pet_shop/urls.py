@@ -26,6 +26,7 @@ urlpatterns = [
     path('petshop/create',views.create,name='pet-create'),
     path('petshop/<int:pet_id>/update',views.update,name='pet-update'),
     path('petshop/<int:pet_id>/detail',views.detail,name='pet-detail'),
+    path('petshop/<int:pet_id>/delete/', views.delete, name='pet-delete'),
 ]
 if settings.DEBUG:
     '''Uncomment the next line to include your static files'''

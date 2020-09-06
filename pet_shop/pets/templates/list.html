@@ -7,7 +7,7 @@
 	<div class="col-md-4">
 				<div class="card my-card">
 					<div class="card-body">
-						{% if pet.img %}
+						{% if pet.image %}
 						<img src="{{pet.image.url}}" alt="picture">
 						{% endif %}
 						<a href="{{pet.get_absolute_url}}">
@@ -18,23 +18,12 @@
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item text-center">
-								<a href="{% url 'detail' pet.id %}" class="btn btn-outline-dark">View Detail</a>
+								<a href="{% url 'pet-detail' pet.id %}" class="btn btn-outline-dark">View Detail</a>
 						</li>
 					</ul>
 				</div>
 		</div>
 	{% endfor %}
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock content %}

@@ -12,4 +12,4 @@ class Pets(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'pet_id':self.id})
+        return reverse('pet-detail', kwargs={'pet_id':self.id})
