@@ -18,4 +18,13 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('petshop/',views.list,name='pet-list'),
+    path('petshop/create',views.create,name='pet-create'),
+    path('petshop/<int:pet_id>/update',view.update,name='pet-update'),
+    path('petshop/<int:pet_id>/detail',view.detail,name='pet-detail'),
 ]
+if settings.DEBUG:
+    '''Uncomment the next line to include your static files'''
+    # urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
